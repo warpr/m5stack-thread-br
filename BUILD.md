@@ -28,8 +28,7 @@ The build itself takes several minutes, most of it spent compiling firmware.
 Once the image is built, copy the build output out of it onto your host:
 
 ```sh
-docker run --rm -v "$PWD/out":/out m5stack-thread-br \
-    cp -r examples/m5stack_thread_border_router/build /out
+bin/extract-firmware
 ```
 
 This places the build directory under `./out/build`, including:

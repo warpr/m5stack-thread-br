@@ -1,0 +1,4 @@
+#!/bin/sh
+
+docker run --rm -v "$PWD/out":/out m5stack-thread-br \
+  cp -r examples/m5stack_thread_border_router/build /out
