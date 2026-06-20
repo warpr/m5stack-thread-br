@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync --links --recursive --times --verbose luigi:code/m5stack-thread-br/out .

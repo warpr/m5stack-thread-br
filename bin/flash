@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ ! -x "ve/bin/esptool" ]; then
+    python3 -m venv ve && ve/bin/pip3 install esptool
+    echo "esptool installed, now let's go flashing..."
+fi
+
+if [ ! -f out/build/flash_args ]; then
+    echo "Firmware missing, please build the firmware and then"
+    echo "run bin/get-firmware to copy it to this machine"
+    exit 1
+fi
+
+cd out/build/ ; ../../ve/bin/esptool -p /dev/cu.usbmodem101 --chip esp32s3 write_flash @flash_args
